@@ -1,0 +1,19 @@
+{
+  "name": "site-ohmyfood",
+  "version": "1.0.0",
+  "description": "Projet du site Ohmyfood dans le cadre de la formation OpenClassrooms.",
+  "main": "index.js",
+  "scripts": {
+    "sass": "sass --watch ./scss/main.scss:./css/style.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Pierre-Riverain/Projet-Ameliorez-l-interface-d-un-site-mobile-avec-des-animations-CSS.git"
+  },
+  "author": "Pierre Riverain",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Pierre-Riverain/Projet-Ameliorez-l-interface-d-un-site-mobile-avec-des-animations-CSS/issues"
+  },
+  "homepage": "https://github.com/Pierre-Riverain/Projet-Ameliorez-l-interface-d-un-site-mobile-avec-des-animations-CSS#readme"
+}
