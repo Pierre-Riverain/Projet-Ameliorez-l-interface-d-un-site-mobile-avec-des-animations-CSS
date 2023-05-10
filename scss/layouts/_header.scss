@@ -1,0 +1,51 @@
+/* ----- Header ----- */
+.header {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin: 0;
+
+    &__logo-block {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        top: 0;
+        left: 0;
+        height: 63px;
+        width: 100%;
+    }
+
+    &__back-link {
+        display: inline-block;
+        position: relative;
+        left: 23px;
+    }
+
+    &__search-bar {
+        display: flex;
+        flex-direction: row;
+        position: absolute;
+        justify-content: center;
+        align-items: center;
+        height: 50px;
+        width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+        background-color: $color-background-search;
+        gap: 17px;
+        top: 64px;
+        left: 0;
+        
+        input {
+            top: 0;
+            left: 0;
+            border-color: transparent;
+            background-color: transparent;
+        }
+    }
+
+    @include responsive(desktop) {
+        padding-left: 23px;
+    }
+}

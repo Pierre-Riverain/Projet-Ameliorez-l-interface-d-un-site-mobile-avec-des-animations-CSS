@@ -1,0 +1,5 @@
+/* ----- Card ----- */
+
+.card {
+    @include card-style(cs-default);
+}

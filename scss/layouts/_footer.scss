@@ -1,0 +1,54 @@
+/* ----- Footer ----- */
+
+footer {
+    display: flex;
+    flex-direction: column;
+    padding: 22px;
+    background: #353535;
+    color: white;
+    gap: 16px;
+
+    h1 {
+        font-family: 'Shrikhand', cursive;
+        font-style: italic;
+        font-weight: 400;
+        font-size: 18px;
+        color: white;
+    }
+
+    > div {
+        display: flex;
+        flex-direction: column;
+        gap: 7px;
+
+        div {
+            display: flex;
+            gap: 11px;
+        }
+        @include responsive(desktop) {
+            display: flex;
+            flex-direction: row;
+        }
+    }
+
+    a {
+        text-decoration: none;
+        color: white;
+    }
+
+    i {
+        color: white;
+    }
+
+    @include responsive(desktop) {
+        display: flex;
+        flex-direction: row-reverse;
+        align-items: center;
+        gap: 100px;
+        div {
+            display: flex;
+            flex-direction: row;
+            gap: 10px;
+        }
+    }
+}

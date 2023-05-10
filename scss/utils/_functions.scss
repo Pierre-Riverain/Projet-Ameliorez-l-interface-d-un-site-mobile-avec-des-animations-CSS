@@ -1,0 +1,4 @@
+@function card-style-radius($cs) {
+    $cs-selected : map-get($card-style-map, $cs);
+    @return map-get($cs-selected, cs-radius);
+}

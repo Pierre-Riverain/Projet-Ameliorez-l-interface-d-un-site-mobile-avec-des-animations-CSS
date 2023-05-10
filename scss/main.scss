@@ -1,0 +1,21 @@
+@import "./utils/variables";
+@import "./utils/functions";
+@import "./utils/mixins";
+
+/* ***** ***** Base ***** ***** */
+@import "./base/general";
+
+/* ***** ***** Components ***** ***** */
+@import "./components/card";
+@import "./components/button";
+@import "./components/like";
+
+/* ***** ***** Layouts ***** ***** */
+@import "./layouts/header";
+@import "./layouts/img-section";
+@import "./layouts/menu-section";
+@import "./layouts/title-section";
+@import "./layouts/footer";
+
+/* ***** ***** Pages ***** ***** */
+@import "./pages/index";

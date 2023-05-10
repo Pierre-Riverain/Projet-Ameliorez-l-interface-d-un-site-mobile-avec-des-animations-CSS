@@ -1,0 +1,12 @@
+/* ----- General ----- */
+section {
+    width: 100%;
+}
+
+body {
+    margin: 0;
+}
+
+p {
+    @include font-style(fs-paragraph-default);
+}

@@ -1,0 +1,100 @@
+/* ----- Menu Section ----- */
+.menu-section {
+    height: calc(100% - 40px);
+    &__container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 12px;
+        background-color: $color-main-background;
+        position: relative;
+        top: -40px;
+        border-top-left-radius: 40px;
+        border-top-right-radius: 40px;
+        margin-bottom: 0;
+        height: calc(100% + 40px);
+
+        @include responsive(desktop) {
+            @include responsive-container;
+        }
+    }
+
+    &__title {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 24px;
+
+        h1 {
+            @include font-style(fs-title-name-restaurant);
+        }
+    }
+
+    &__subtitle {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        margin-top: 28px;
+        margin-left: 13px;
+        margin-bottom: 0;
+
+        h2 {
+            margin-bottom: 10px;
+            font-weight: normal;
+        }
+
+        div {
+            position: relative;
+            width: 50px;
+            border: 3px solid $color-decorative;
+            bottom: 0;
+            left: 0;
+        }
+
+        @include responsive(desktop) {
+            @include width-element-in-menu-restaurant-in-responsive-desktop(45px);
+        }
+    }
+
+    &__card {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        padding: 14px;
+        margin: auto 13px;
+
+        h3 {
+            margin: 5px;
+            font-size: 18px;
+        }
+
+        p {
+            margin: 5px;
+            font-size: 15px;
+        }
+
+        &--price {
+            font-weight: 700;
+        }
+
+        @include responsive(desktop) {
+            @include width-element-in-menu-restaurant-in-responsive-desktop;
+        }
+    }
+
+    &__command-button {
+        display: flex;
+        justify-content: center;
+    }
+
+    .button {
+        margin: 40px;
+    }
+
+    @include responsive(desktop) {
+        @include responsive-section;
+    }
+}

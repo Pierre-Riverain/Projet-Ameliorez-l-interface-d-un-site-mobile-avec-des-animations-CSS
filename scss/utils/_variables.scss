@@ -1,0 +1,61 @@
+$color-main-background: #f6f6f6;
+$color-background-search: #eaeaea;
+$color-background-functioning-index: #9356DC;
+$color-decorative: #99e2d0;
+
+$screen-resolution-width: (
+    desktop: 768px,
+    pad: 768px
+);
+
+$font-style-map: (
+    fs-title-default: (
+        fs-mobile: (
+            fs-family: 'Roboto',
+            fs-size: 24px,
+            fs-weight: 700
+        ),
+        fs-desktop: (
+            fs-family: 'Roboto',
+            fs-size: 24px,
+            fs-weight: 700
+        )
+    ),
+    fs-title-name-restaurant: (
+        fs-mobile: (
+            fs-family: 'Shrikhand',
+            fs-size: 28px,
+            fs-weight: 400
+        ),
+        fs-desktop: (
+            fs-family: 'Shrikhand',
+            fs-size: 28px,
+            fs-weight: 400
+        )
+    ),
+    fs-paragraph-default: (
+        fs-mobile: (
+            fs-family: 'Roboto',
+            fs-size: 18px,
+            fs-weight: 300
+        ),
+        fs-desktop: (
+            fs-family: 'Roboto',
+            fs-size: 18px,
+            fs-weight: 300
+        )
+    )
+);
+
+$card-style-map: (
+    cs-functioning: (
+        cs-shadow: 0px 4px 15px rgba(0, 0, 0, 0.15),
+        cs-radius: 20px,
+        cs-background-color: #f7f7f7
+    ),
+    cs-default: (
+        cs-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1),
+        cs-radius: 15px,
+        cs-background-color: white
+    )
+)

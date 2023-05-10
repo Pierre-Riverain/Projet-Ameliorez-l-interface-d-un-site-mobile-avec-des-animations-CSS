@@ -1,0 +1,39 @@
+@mixin responsive($screen) {
+    @media screen and (min-width:map-get($screen-resolution-width, $screen)) {
+        @content;
+    }
+}
+
+@mixin card-style($cs: cs-default) {
+    $cs-selected: map-get($card-style-map, $cs);
+    box-shadow: map-get($cs-selected, cs-shadow);
+    border-radius: map-get($cs-selected, cs-radius);
+    background-color: map-get($cs-selected, cs-background-color);
+}
+
+@mixin font-style($fs, $fs-screen: fs-mobile) {
+    $fs-selected: map-get($font-style-map, $fs);
+    $fs-screen-selected: map-get($fs-selected, $fs-screen);
+    font-family: map-get($fs-screen-selected, fs-family);
+    font-size: map-get($fs-screen-selected, fs-size);
+    font-weight: map-get($fs-screen-selected, fs-weight);
+}
+
+@mixin responsive-section {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+@mixin responsive-container {
+    width: 1055px;
+}
+
+@mixin width-element-in-menu-restaurant-in-responsive-desktop($add-width: 0) {
+    @if $add-width > 0 {
+        width: calc(60% + $add-width);
+    }
+    @else {
+        width: 60%;
+    }
+}
