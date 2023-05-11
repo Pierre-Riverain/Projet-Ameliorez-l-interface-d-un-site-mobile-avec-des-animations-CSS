@@ -1,6 +1,6 @@
 /* ----- Menu Section ----- */
 .menu-section {
-    height: calc(100% - 40px);
+    height: 100%;
     &__container {
         display: flex;
         flex-direction: column;
@@ -10,6 +10,7 @@
         background-color: $color-main-background;
         position: relative;
         top: -40px;
+        bottom: 0;
         border-top-left-radius: 40px;
         border-top-right-radius: 40px;
         margin-bottom: 0;
@@ -40,6 +41,7 @@
         margin-top: 28px;
         margin-left: 13px;
         margin-bottom: 0;
+        width: calc(85% + 45px);
 
         h2 {
             margin-bottom: 10px;
@@ -65,6 +67,7 @@
         align-items: flex-end;
         padding: 14px;
         margin: auto 13px;
+        width: 85%;
 
         h3 {
             margin: 5px;
