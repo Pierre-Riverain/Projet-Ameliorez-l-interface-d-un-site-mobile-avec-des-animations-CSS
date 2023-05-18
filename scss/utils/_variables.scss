@@ -46,7 +46,6 @@ $font-style-map: (
         )
     )
 );
-
 $card-style-map: (
     cs-functioning: (
         cs-shadow: 0px 4px 15px rgba(0, 0, 0, 0.15),
@@ -58,4 +57,22 @@ $card-style-map: (
         cs-radius: 15px,
         cs-background-color: white
     )
-)
+);
+
+
+$preloader-logo-delay: 250ms;
+$preloader-logo-duration: 500ms;
+
+$preloader-div-delay: 125ms;
+$preloader-div-duration: 500ms;
+$preloader-div-wait: 1000ms;
+
+$preloader-welcome-message-delay: 3000ms;
+$preloader-welcome-message-duration: 500ms;
+
+$preloader-container-delay: 4000ms;
+$preloader-container-duration: 500ms;
+
+$loader-animation-delay: 200ms;
+$loader-animation-duration: 200ms;
+$loader-animation-wait: 5000ms;

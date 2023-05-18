@@ -27,9 +27,14 @@
         justify-content: center;
         align-items: center;
         gap: 24px;
+        margin-top: 32px;
 
         h1 {
             @include font-style(fs-title-name-restaurant);
+        }
+
+        @include responsive(desktop) {
+            margin-top: 50px;
         }
     }
 
@@ -62,6 +67,7 @@
     }
 
     &__card {
+        position: relative;
         display: flex;
         justify-content: space-between;
         align-items: flex-end;
@@ -81,6 +87,45 @@
 
         &--price {
             font-weight: 700;
+
+            @include anim-switch(price-translate-anim, 200ms, alternate);
+        }
+
+        &--checked {
+            position: absolute;
+            right: 0;
+            top: 0;
+            bottom: 0;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            background: #99E2D0;
+            border-radius: 0px 15px 15px 0px;
+            width: 59px;
+            height: 100%;
+
+            transform-origin: right;
+            transform: scaleX(0);
+            
+            @include anim-switch(scale-x-anim, 200ms, alternate);
+
+            i {
+                color: white;
+                width: 20px;
+                height: 20px;
+            }
+        }
+
+        &:active {
+            .menu-section__card--checked {
+                animation-play-state: running;
+            }
+
+            .menu-section__card--price {
+                animation-play-state: running;
+            }
         }
 
         @include responsive(desktop) {

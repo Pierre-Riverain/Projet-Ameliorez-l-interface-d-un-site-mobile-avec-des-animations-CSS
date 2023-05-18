@@ -86,8 +86,38 @@
             }
         }
 
-        @include responsive(desktop) {
+        i {
+            position: relative;
+            
+            &::after {
+                position: absolute;
+                top: 0;
+                left: 0;
+                bottom: 0;
+                right: 0;
+                color: $color-background-functioning-index;
+                opacity: 0;
+                transition: opacity 200ms;
+                z-index: 1;
+            }
+        }
 
+        .fa-mobile-screen-button::after {
+            content: "\f3cd";
+        }
+
+        .fa-list-ul::after {
+            content: "\f0ca";
+        }
+
+        .fa-store::after {
+            content: "\f54e";
+        }
+
+        &:hover {
+            i::after {
+                opacity: 1;
+            }
         }
     }
 
@@ -140,12 +170,8 @@
     &__card {
         display: flex;
         flex-direction: column;
-        width: 340px;
+        width: 90%;
         height: 250px;
-
-        @include responsive(desktop) {
-            width: 499px;
-        }
 
         &--img {
             padding: 0;
@@ -182,5 +208,127 @@
                 margin: 0 15px 15px 15px;
             }
         }
+
+        .like {
+            z-index: 1;
+        }
+
+        @include responsive(desktop) {
+            width: auto;
+        }
+    }
+}
+
+.banner-new {
+    padding: 7px 9px;
+    margin-top: 15px;
+    margin-right: 15px;
+
+    background-color: $color-decorative;
+    color: #008766;
+
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    text-align: center;
+
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.15);
+    border-radius: 2px;
+
+}
+
+/* ----- Loader ----- */
+.loader {
+    animation-name: loader-anim;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: both;
+    animation-duration: $loader-animation-duration;
+    
+    @for $i from 1 through 5 {
+        &--#{$i} {
+            animation-delay: $loader-animation-wait + $loader-animation-delay * $i;
+        }
+    }
+}
+
+.preloader {
+    &__container {
+
+        position: absolute;
+        width: 100vw;
+        height: 100vh;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        animation-duration: $preloader-container-duration;
+        animation-delay: $preloader-container-delay;
+        animation-fill-mode: both;
+        animation-timing-function: ease-in-out;
+        animation-name: opacity-anim;
+        animation-direction: reverse;
+    }
+
+    &__logo {
+        font-family: 'Shrikhand';
+        font-size: 2em;
+        margin: 0;
+
+        animation-duration: $preloader-logo-duration;
+        animation-delay: $preloader-logo-delay;
+        animation-fill-mode: both;
+        animation-timing-function: ease-in-out;
+        animation-name: opacity-anim;
+    }
+
+    &__welcome-container {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr;
+        position: relative;
+    }
+
+    &__div {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 5px;
+
+        &--1 {
+            background-color: $color-background-functioning-index;
+            z-index: 1;
+        }
+
+        &--2 {
+            background-color: $color-decorative;
+        }
+
+        animation-duration: $preloader-div-duration;
+        animation-fill-mode: both;
+        animation-timing-function: ease-in-out;
+        animation-name: preloader__div-anim;
+        
+        @for $i from 1 through 2 {
+            &--#{$i} {
+                animation-delay: $preloader-div-wait + $preloader-div-delay * $i;
+            }
+        }
+    }
+
+    &__welcome-message {
+        font-family: 'Roboto';
+        font-size: 1.5em;
+        text-align: right;
+        margin: 0;
+
+        animation-duration: $preloader-welcome-message-duration;
+        animation-delay: $preloader-welcome-message-delay;
+        animation-fill-mode: both;
+        animation-timing-function: ease-in-out;
+        animation-name: opacity-anim;
     }
 }

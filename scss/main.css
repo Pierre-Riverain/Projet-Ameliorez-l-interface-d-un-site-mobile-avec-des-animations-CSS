@@ -1,11 +1,37 @@
+/* ----- Anims ----- */
+@keyframes opacity-anim {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes scale-x-anim {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+@keyframes price-translate-anim {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-59px);
+  }
+}
 /* ***** ***** Base ***** ***** */
 /* ----- General ----- */
 section {
-  width: 100%;
+  width: 100vw;
 }
 
 body {
   margin: 0;
+  width: 100vw;
 }
 
 p {
@@ -24,30 +50,87 @@ p {
 
 /* ----- Button ----- */
 .button {
+  display: block;
   text-decoration: none;
   color: white;
   background: linear-gradient(193.33deg, #9356DC -11.44%, #ff79da 123.93%);
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
   border-radius: 25px;
-  padding: 13px 19px;
+  padding: 13px 16px;
   width: -moz-fit-content;
   width: fit-content;
+  position: relative;
+  z-index: 1;
+}
+.button:hover::after {
+  opacity: 1;
+  border-radius: 25px;
+}
+.button::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  opacity: 0;
+  background: linear-gradient(0deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.15)), linear-gradient(200.64deg, #9356DC -5.2%, #FF79DA 110.74%);
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.35);
+  border-radius: 25px;
+  z-index: -1;
+  transition: opacity 0.25s;
 }
 
 /* ----- Like ----- */
 .like {
-  grid-column: 2;
-  grid-row: 1/3;
   display: flex;
   justify-content: center;
   align-items: center;
+  grid-column: 2;
+  grid-row: 1/3;
+  transition: opacity 0.2s;
 }
-.like .fa-solid {
-  display: none;
-}
-.like .fa-heart {
+.like-heart {
+  position: relative;
   width: 22px;
   height: 21px;
+}
+.like .fa-solid {
+  opacity: 0;
+  background: linear-gradient(193.33deg, #9356DC -11.44%, #FF79DA 123.93%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-background-clip: text;
+  -moz-text-fill-color: transparent;
+  animation-duration: 200ms;
+  animation-fill-mode: both;
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+  animation-name: opacity-anim;
+  animation-play-state: paused;
+}
+.like .fa-regular {
+  animation-duration: 200ms;
+  animation-fill-mode: both;
+  animation-direction: alternate-reverse;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+  animation-name: opacity-anim;
+  animation-play-state: paused;
+}
+.like i {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.like:active .fa-solid {
+  animation-play-state: running;
+}
+.like:active .fa-regular {
+  animation-play-state: running;
 }
 
 /* ***** ***** Layouts ***** ***** */
@@ -56,7 +139,7 @@ p {
   position: relative;
   display: flex;
   align-items: center;
-  width: 100%;
+  width: 100vw;
   margin: 0;
 }
 .header__logo-block {
@@ -80,7 +163,7 @@ p {
   justify-content: center;
   align-items: center;
   height: 50px;
-  width: 100%;
+  width: 100vw;
   margin-left: 0;
   margin-right: 0;
   background-color: #eaeaea;
@@ -122,7 +205,7 @@ p {
 
 /* ----- Menu Section ----- */
 .menu-section {
-  height: calc(100% - 40px);
+  height: 100%;
 }
 .menu-section__container {
   display: flex;
@@ -133,6 +216,7 @@ p {
   background-color: #f6f6f6;
   position: relative;
   top: -40px;
+  bottom: 0;
   border-top-left-radius: 40px;
   border-top-right-radius: 40px;
   margin-bottom: 0;
@@ -149,11 +233,17 @@ p {
   justify-content: center;
   align-items: center;
   gap: 24px;
+  margin-top: 32px;
 }
 .menu-section__title h1 {
   font-family: "Shrikhand";
   font-size: 28px;
   font-weight: 400;
+}
+@media screen and (min-width: 768px) {
+  .menu-section__title {
+    margin-top: 50px;
+  }
 }
 .menu-section__subtitle {
   position: relative;
@@ -163,6 +253,7 @@ p {
   margin-top: 28px;
   margin-left: 13px;
   margin-bottom: 0;
+  width: calc(85% + 45px);
 }
 .menu-section__subtitle h2 {
   margin-bottom: 10px;
@@ -181,11 +272,13 @@ p {
   }
 }
 .menu-section__card {
+  position: relative;
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
   padding: 14px;
   margin: auto 13px;
+  width: 85%;
 }
 .menu-section__card h3 {
   margin: 5px;
@@ -197,6 +290,46 @@ p {
 }
 .menu-section__card--price {
   font-weight: 700;
+  animation-duration: 200ms;
+  animation-fill-mode: both;
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+  animation-name: price-translate-anim;
+  animation-play-state: paused;
+}
+.menu-section__card--checked {
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #99E2D0;
+  border-radius: 0px 15px 15px 0px;
+  width: 59px;
+  height: 100%;
+  transform-origin: right;
+  transform: scaleX(0);
+  animation-duration: 200ms;
+  animation-fill-mode: both;
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+  animation-name: scale-x-anim;
+  animation-play-state: paused;
+}
+.menu-section__card--checked i {
+  color: white;
+  width: 20px;
+  height: 20px;
+}
+.menu-section__card:active .menu-section__card--checked {
+  animation-play-state: running;
+}
+.menu-section__card:active .menu-section__card--price {
+  animation-play-state: running;
 }
 @media screen and (min-width: 768px) {
   .menu-section__card {
@@ -231,6 +364,7 @@ footer {
   display: flex;
   flex-direction: column;
   padding: 22px;
+  width: 100%;
   background: #353535;
   color: white;
   gap: 16px;
@@ -276,6 +410,10 @@ footer i {
     flex-direction: row;
     gap: 10px;
   }
+}
+
+.footer-negative-margin-top {
+  margin-top: -40px;
 }
 
 /* ***** ***** Pages ***** ***** */
@@ -360,6 +498,32 @@ footer i {
 }
 .functioning-section__card--index p {
   color: white;
+}
+.functioning-section__card i {
+  position: relative;
+}
+.functioning-section__card i::after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  color: #9356DC;
+  opacity: 0;
+  transition: opacity 200ms;
+  z-index: 1;
+}
+.functioning-section__card .fa-mobile-screen-button::after {
+  content: "\f3cd";
+}
+.functioning-section__card .fa-list-ul::after {
+  content: "\f0ca";
+}
+.functioning-section__card .fa-store::after {
+  content: "\f54e";
+}
+.functioning-section__card:hover i::after {
+  opacity: 1;
 }
 @media screen and (min-width: 768px) {
   .functioning-section {
@@ -452,4 +616,7 @@ footer i {
   grid-column: 1;
   grid-row: 2;
   margin: 0 15px 15px 15px;
+}
+.restaurants-section__card .like {
+  z-index: 1;
 }/*# sourceMappingURL=main.css.map */

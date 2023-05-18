@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=375" />
     <title>Menu - La palette du goût</title>
-    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/prefixed/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Shrikhand&display=swap" rel="stylesheet">
@@ -32,8 +32,10 @@
                 <div class="menu-section__title">
                     <h1>La palette du goût</h1>
                     <div class="like">
-                        <i class="fa-regular fa-heart"></i>
-                        <i class="fa-solid fa-heart"></i>
+                        <div class="like-heart">
+                            <i class="fa-regular fa-heart"></i>
+                            <i class="fa-solid fa-heart"></i>
+                        </div>
                     </div>
                 </div>
                 <!-- Cette partie de la section menu concerne les entrées -->
@@ -47,6 +49,9 @@
                         <p>Au piment d'Espelette</p>
                     </div>
                     <p class="menu-section__card--price">25€</p>
+                    <div class="menu-section__card--checked">
+                        <i class="fa-solid fa-circle-check"></i>
+                    </div>
                 </article>
                 <article class="menu-section__card card">
                     <div>
@@ -54,6 +59,9 @@
                         <p>Et ses copeaux de truffe noire</p>
                     </div>
                     <p class="menu-section__card--price">35€</p>
+                    <div class="menu-section__card--checked">
+                        <i class="fa-solid fa-circle-check"></i>
+                    </div>
                 </article>
                 <article class="menu-section__card card">
                     <div>
@@ -61,6 +69,9 @@
                         <p>Assaisonné à la truffe sur lit de caviar</p>
                     </div>
                     <p class="menu-section__card--price">20€</p>
+                    <div class="menu-section__card--checked">
+                        <i class="fa-solid fa-circle-check"></i>
+                    </div>
                 </article>
 
                 <!-- Cette partie de la section menu concerne les plats -->
@@ -74,6 +85,9 @@
                         <p>Accompagné de sa ribambelle de légumes</p>
                     </div>
                     <p class="menu-section__card--price">40€</p>
+                    <div class="menu-section__card--checked">
+                        <i class="fa-solid fa-circle-check"></i>
+                    </div>
                 </article>
                 <article class="menu-section__card card">
                     <div>
@@ -81,6 +95,9 @@
                         <p>A la truffe noire sur sa purée de panais</p>
                     </div>
                     <p class="menu-section__card--price">35€</p>
+                    <div class="menu-section__card--checked">
+                        <i class="fa-solid fa-circle-check"></i>
+                    </div>
                 </article>
                 <article class="menu-section__card card">
                     <div>
@@ -88,6 +105,9 @@
                         <p>Aux agrumes</p>
                     </div>
                     <p class="menu-section__card--price">44€</p>
+                    <div class="menu-section__card--checked">
+                        <i class="fa-solid fa-circle-check"></i>
+                    </div>
                 </article>
 
                 <!-- Cette partie de la section menu concerne les desserts -->
@@ -101,6 +121,9 @@
                         <p>Revisité</p>
                     </div>
                     <p class="menu-section__card--price">18€</p>
+                    <div class="menu-section__card--checked">
+                        <i class="fa-solid fa-circle-check"></i>
+                    </div>
                 </article>
                 <article class="menu-section__card card">
                     <div>
@@ -108,6 +131,9 @@
                         <p>Et glace à la vanille de Madagascar</p>
                     </div>
                     <p class="menu-section__card--price">22€</p>
+                    <div class="menu-section__card--checked">
+                        <i class="fa-solid fa-circle-check"></i>
+                    </div>
                 </article>
                 <article class="menu-section__card card">
                     <div>
@@ -115,6 +141,9 @@
                         <p>Au piment d'Espelette et à la truffe noire</p>
                     </div>
                     <p class="menu-section__card--price">23€</p>
+                    <div class="menu-section__card--checked">
+                        <i class="fa-solid fa-circle-check"></i>
+                    </div>
                 </article>
                 <div class="menu-section__command-button">
                     <a href="#" class="button">Commander</a>
