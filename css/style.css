@@ -54,6 +54,7 @@
 /* ----- General ----- */
 section {
   width: 100vw;
+  box-sizing: border-box;
 }
 
 body {
@@ -168,6 +169,7 @@ p {
   align-items: center;
   width: 100vw;
   margin: 0;
+  box-sizing: border-box;
 }
 .header__logo-block {
   display: flex;
@@ -398,6 +400,7 @@ footer {
   background: #353535;
   color: white;
   gap: 16px;
+  box-sizing: border-box;
 }
 footer h1 {
   font-family: "Shrikhand", cursive;
