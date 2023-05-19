@@ -3,10 +3,11 @@
     position: relative;
     display: flex;
     align-items: center;
-    width: 100vw;
+    width: 100%;
+    left: 0;
     margin: 0;
     box-sizing: border-box;
-
+    
     &__logo-block {
         display: flex;
         justify-content: center;
@@ -19,7 +20,7 @@
 
     &__back-link {
         display: inline-block;
-        position: relative;
+        position: absolute;
         left: 23px;
         color: black;
     }
@@ -31,13 +32,14 @@
         justify-content: center;
         align-items: center;
         height: 50px;
-        width: 100vw;
+        width: 100%;
         margin-left: 0;
         margin-right: 0;
         background-color: $color-background-search;
         gap: 17px;
         top: 64px;
         left: 0;
+        box-sizing: border-box;
         
         input {
             top: 0;
