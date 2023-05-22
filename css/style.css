@@ -291,19 +291,45 @@ p {
   justify-content: space-between;
   align-items: flex-end;
   padding: 14px;
+  gap: 10px;
   margin: auto 13px;
   width: 85%;
+  padding-right: 10px;
 }
-.menu-section__card h3 {
-  margin: 5px;
+.menu-section__card--info {
+  width: calc(100% - 40px);
+  box-sizing: border-box;
+  transition: all 0.2s ease-in-out;
+}
+.menu-section__card--info h3 {
+  display: block;
+  margin-top: 5px;
+  margin-bottom: 5px;
   font-size: 18px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  box-sizing: border-box;
+  width: 100%;
+  transition: all 0.2s ease-in-out;
 }
-.menu-section__card p {
-  margin: 5px;
+.menu-section__card--info p {
+  display: block;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  margin-left: 0;
+  margin-right: 0;
+  padding-right: 0;
   font-size: 15px;
-  text-overflow: elipsis;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  box-sizing: border-box;
+  width: 100%;
+  transition: all 0.2s ease-in-out;
 }
 .menu-section__card--price {
+  display: block;
   font-weight: 700;
   transform: translateX(0);
   transition: transform 0.2s ease-in-out;
@@ -339,6 +365,12 @@ p {
 }
 .menu-section__card:hover .menu-section__card--price {
   transform: translateX(-59px);
+}
+.menu-section__card:hover .menu-section__card--info {
+  width: calc(100% - 61px);
+}
+.menu-section__card:hover .menu-section__card--info p {
+  padding-right: 33px;
 }
 @media screen and (min-width: 768px) {
   .menu-section__card {
