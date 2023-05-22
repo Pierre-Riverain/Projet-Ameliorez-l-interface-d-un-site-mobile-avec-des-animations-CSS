@@ -7,7 +7,7 @@
     opacity: 1;
   }
 }
-@keyframes scale-x-anim {
+@keyframes checked-div-anim {
   from {
     transform: scaleX(0);
   }
@@ -317,7 +317,7 @@ p {
   animation-direction: alternate;
   animation-iteration-count: infinite;
   animation-timing-function: ease-in-out;
-  animation-name: scale-x-anim;
+  animation-name: checked-div-anim;
   animation-play-state: paused;
 }
 .menu-section__card--checked i {

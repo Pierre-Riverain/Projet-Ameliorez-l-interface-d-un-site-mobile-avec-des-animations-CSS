@@ -1,5 +1,11 @@
 /* ----- General ----- */
 
+* {
+    font-family: 'Roboto';
+    margin: 0;
+    padding: 0;
+  }
+
 section {
     width: 100%;
     box-sizing: border-box;
@@ -8,9 +14,12 @@ section {
 }
 
 body {
+    display: block;
     margin: 0;
     width: 100%;
     box-sizing: border-box;
+    overflow-x: hidden;
+    
 }
 
 p {
