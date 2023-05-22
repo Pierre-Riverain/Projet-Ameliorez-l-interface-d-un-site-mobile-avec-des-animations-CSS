@@ -257,7 +257,7 @@
 
 /* ----- Loader ----- */
 .loader {
-    animation-name: loader-anim;
+    animation-name: opacity-anim;
     animation-timing-function: ease-in-out;
     animation-fill-mode: both;
     animation-duration: $loader-animation-duration;

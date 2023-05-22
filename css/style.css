@@ -7,39 +7,6 @@
     opacity: 1;
   }
 }
-@keyframes checked-div-anim {
-  0% {
-    transform: scaleX(0);
-    opacity: 0;
-  }
-  20% {
-    opacity: 0;
-  }
-  30% {
-    opacity: 1;
-  }
-  100% {
-    transform: scaleX(1);
-  }
-}
-@keyframes price-translate-anim {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(-59px);
-  }
-}
-@keyframes loader-anim {
-  from {
-    opacity: 0;
-    transform: scale(0);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
 @keyframes preloader__div-anim {
   0% {
     transform-origin: left;
@@ -147,22 +114,13 @@ p {
   -webkit-text-fill-color: transparent;
   -moz-background-clip: text;
   -moz-text-fill-color: transparent;
-  animation-duration: 200ms;
-  animation-fill-mode: both;
-  animation-direction: alternate;
-  animation-iteration-count: infinite;
-  animation-timing-function: ease-in-out;
-  animation-name: opacity-anim;
-  animation-play-state: paused;
+  transition: opacity 0.2s ease-in-out;
+  /* @include anim-switch(opacity-anim, 200ms, alternate); */
 }
 .like .fa-regular {
-  animation-duration: 200ms;
-  animation-fill-mode: both;
-  animation-direction: alternate-reverse;
-  animation-iteration-count: infinite;
-  animation-timing-function: ease-in-out;
-  animation-name: opacity-anim;
-  animation-play-state: paused;
+  opacity: 1;
+  transition: opacity 0.2s ease-in-out;
+  /* @include anim-switch(opacity-anim, 200ms, alternate-reverse); */
 }
 .like i {
   position: absolute;
@@ -176,6 +134,12 @@ p {
 }
 .like:active .fa-regular {
   animation-play-state: running;
+}
+.like:hover .fa-solid {
+  opacity: 1;
+}
+.like:hover .fa-regular {
+  opacity: 0;
 }
 
 /* ***** ***** Layouts ***** ***** */
@@ -337,16 +301,12 @@ p {
 .menu-section__card p {
   margin: 5px;
   font-size: 15px;
+  text-overflow: elipsis;
 }
 .menu-section__card--price {
   font-weight: 700;
-  animation-duration: 200ms;
-  animation-fill-mode: both;
-  animation-direction: alternate;
-  animation-iteration-count: infinite;
-  animation-timing-function: ease-in-out;
-  animation-name: price-translate-anim;
-  animation-play-state: paused;
+  transform: translateX(0);
+  transition: transform 0.2s ease-in-out;
 }
 .menu-section__card--checked {
   position: absolute;
@@ -362,24 +322,23 @@ p {
   height: 100%;
   transform-origin: right;
   transform: scaleX(0);
-  animation-duration: 200ms;
-  animation-fill-mode: both;
-  animation-direction: alternate;
-  animation-iteration-count: infinite;
-  animation-timing-function: ease-in-out;
-  animation-name: checked-div-anim;
-  animation-play-state: paused;
+  transition: transform 0.2s ease-in-out;
 }
 .menu-section__card--checked i {
   color: white;
   width: 20px;
   height: 20px;
+  transform: rotate(180deg);
+  transition: transform 0.2s ease-in-out;
 }
-.menu-section__card:active .menu-section__card--checked {
-  animation-play-state: running;
+.menu-section__card:hover .menu-section__card--checked {
+  transform: scale(1);
 }
-.menu-section__card:active .menu-section__card--price {
-  animation-play-state: running;
+.menu-section__card:hover .menu-section__card--checked i {
+  transform: rotate(0);
+}
+.menu-section__card:hover .menu-section__card--price {
+  transform: translateX(-59px);
 }
 @media screen and (min-width: 768px) {
   .menu-section__card {
@@ -708,7 +667,7 @@ footer i {
 
 /* ----- Loader ----- */
 .loader {
-  animation-name: loader-anim;
+  animation-name: opacity-anim;
   animation-timing-function: ease-in-out;
   animation-fill-mode: both;
   animation-duration: 200ms;
@@ -717,19 +676,19 @@ footer i {
   margin-top: 50px;
 }
 .loader--1 {
-  animation-delay: 4200ms;
+  animation-delay: 3950ms;
 }
 .loader--2 {
-  animation-delay: 4400ms;
+  animation-delay: 4150ms;
 }
 .loader--3 {
-  animation-delay: 4600ms;
+  animation-delay: 4350ms;
 }
 .loader--4 {
-  animation-delay: 4800ms;
+  animation-delay: 4550ms;
 }
 .loader--5 {
-  animation-delay: 5000ms;
+  animation-delay: 4750ms;
 }
 
 .preloader__container {
@@ -741,7 +700,7 @@ footer i {
   justify-content: center;
   align-items: center;
   animation-duration: 500ms;
-  animation-delay: 3000ms;
+  animation-delay: 2750ms;
   animation-fill-mode: both;
   animation-timing-function: ease-in-out;
   animation-name: opacity-anim;
@@ -793,7 +752,7 @@ footer i {
   text-align: right;
   margin: 0;
   animation-duration: 500ms;
-  animation-delay: 2000ms;
+  animation-delay: 1750ms;
   animation-fill-mode: both;
   animation-timing-function: ease-in-out;
   animation-name: opacity-anim;

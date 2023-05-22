@@ -83,48 +83,54 @@
         p {
             margin: 5px;
             font-size: 15px;
+            text-overflow: elipsis;
         }
 
         &--price {
             font-weight: 700;
-
-            @include anim-switch(price-translate-anim, 200ms, alternate);
+            transform: translateX(0);
+            transition: transform 0.2s ease-in-out;
         }
-
+        
         &--checked {
             position: absolute;
             right: 0;
             top: 0;
             bottom: 0;
-
+            
             display: flex;
             justify-content: center;
             align-items: center;
-
+            
             background: #99E2D0;
             border-radius: 0px 15px 15px 0px;
             width: 59px;
             height: 100%;
-
+            
             transform-origin: right;
             transform: scaleX(0);
+            transition: transform 0.2s ease-in-out;
             
-            @include anim-switch(checked-div-anim, 200ms, alternate);
-
             i {
                 color: white;
                 width: 20px;
                 height: 20px;
+                transform: rotate(180deg);
+                transition: transform 0.2s ease-in-out;
             }
         }
 
-        &:active {
+        &:hover {
             .menu-section__card--checked {
-                animation-play-state: running;
+                transform: scale(1);
+
+                i {
+                    transform: rotate(0);
+                }
             }
 
             .menu-section__card--price {
-                animation-play-state: running;
+                transform: translateX(-59px);
             }
         }
 
