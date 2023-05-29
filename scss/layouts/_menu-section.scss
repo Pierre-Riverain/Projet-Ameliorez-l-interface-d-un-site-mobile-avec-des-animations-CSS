@@ -162,9 +162,6 @@
 
             .menu-section__card--info {
                 width: calc(100% - 61px);
-                h3 {
-
-                }
 
                 p {
                     padding-right: 33px;
@@ -188,5 +185,18 @@
 
     @include responsive(desktop) {
         @include responsive-section;
+    }
+}
+
+.menu__loader {
+    animation-name: opacity-anim;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: both;
+    animation-duration: $loader__menu-animation-duration;
+
+    @for $i from 1 through 13 {
+        &--#{$i} {
+            animation-delay: $loader__menu-animation-wait + $loader__menu-animation-delay * $i;
+        }
     }
 }

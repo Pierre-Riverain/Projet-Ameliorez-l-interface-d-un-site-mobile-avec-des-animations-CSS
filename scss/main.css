@@ -245,7 +245,7 @@ p {
     margin-top: 50px;
   }
 }
-.menu-section__subtitle {
+.menu-section__subtitle menu__loader menu__loader-- {
   position: relative;
   display: flex;
   flex-direction: column;
@@ -255,11 +255,11 @@ p {
   margin-bottom: 0;
   width: calc(85% + 45px);
 }
-.menu-section__subtitle h2 {
+.menu-section__subtitle menu__loader menu__loader-- h2 {
   margin-bottom: 10px;
   font-weight: normal;
 }
-.menu-section__subtitle div {
+.menu-section__subtitle menu__loader menu__loader-- div {
   position: relative;
   width: 50px;
   border: 3px solid #99e2d0;
@@ -267,7 +267,7 @@ p {
   left: 0;
 }
 @media screen and (min-width: 768px) {
-  .menu-section__subtitle {
+  .menu-section__subtitle menu__loader menu__loader-- {
     width: calc(60% + 45px);
   }
 }

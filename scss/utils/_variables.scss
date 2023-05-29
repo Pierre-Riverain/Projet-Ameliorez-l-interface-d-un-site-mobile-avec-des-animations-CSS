@@ -60,19 +60,23 @@ $card-style-map: (
 );
 
 
-$preloader-logo-delay: 250ms;
+$preloader-logo-delay: 400ms;
 $preloader-logo-duration: 500ms;
 
 $preloader-div-delay: 125ms;
 $preloader-div-duration: 500ms;
-$preloader-div-wait: 1000ms;
+$preloader-div-wait: 1150ms;
 
-$preloader-welcome-message-delay: 1750ms;
+$preloader-welcome-message-delay: 1500ms;
 $preloader-welcome-message-duration: 500ms;
 
-$preloader-container-delay: 2750ms;
+$preloader-container-delay: 2500ms;
 $preloader-container-duration: 500ms;
 
 $loader-animation-delay: 200ms;
 $loader-animation-duration: 200ms;
-$loader-animation-wait: 3750ms;
+$loader-animation-wait: 3500ms;
+
+$loader__menu-animation-delay: 200ms;
+$loader__menu-animation-duration: 500ms;
+$loader__menu-animation-wait: 400ms;
